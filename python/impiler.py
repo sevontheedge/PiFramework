@@ -55,6 +55,9 @@ class Impiler(object):
     def assign(self, ast):
         return pi.Assign(ast.id, ast.e)
 
+    def cnst(self, ast):
+        return pi.Bind(ast.id, ast.e)
+
     def var(self, ast):
         return pi.Bind(ast.id, pi.Ref(ast.e))
 
